@@ -25,3 +25,16 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+
+.article-layout {
+  display: grid;
+  grid-template-areas: 
+  "left right right right"
+  "left right right right"
+  "left right right right"
+  ;
+
+  width: 100%;
+  grid-template-columns: 100px 1fr;
+}
