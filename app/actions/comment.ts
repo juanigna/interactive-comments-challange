@@ -1,10 +1,9 @@
 "use server"
 import json from "@/app/lib/data.json"
-import { revalidatePath } from "next/cache"
 
-export const uploadComment = async (formData: FormData) => {
-    const comment = formData.get('comment') as string
-    if (!comment) return
+
+export const uploadComment = async (comment: string) => {
+
     let commentObj = {
         id: json.comments.length + 1,
         content: comment,
@@ -21,5 +20,5 @@ export const uploadComment = async (formData: FormData) => {
     }
 
     json.comments.push(commentObj)
-    revalidatePath('/')
+
 }
